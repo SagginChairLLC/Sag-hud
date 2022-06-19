@@ -14,17 +14,17 @@
         <div id="money-container">
             <div id="money-cash">
                 <transition name="slide-fade">
-                    <p v-if="showCash"><span id="sign">$&nbsp;</span><span id="money">{{(cash)}}</span></p>
+                    <p v-if="showCash"><span id="sign">$&nbsp;<span id="money">{{formatMoney(cash)}}</span></p>
                 </transition>
             </div>
             <div id="money-bank">
                 <transition name="slide-fade">
-                    <p v-if="showBank"><span id="signbank">$&nbsp;</span><span id="bank">{{(bank)}}</span></p>
+                    <p v-if="showBank"><span id="signbank">$&nbsp;<span id="money">{{formatMoney(bank)}}</span></p>
                 </transition>
             </div>
             <div id="money-change" v-if="showUpdate">
-                <p v-if="plus" id="money"><span id="plus">+&nbsp;</span><span id="money">{{(amount)}}</span></p>
-                <p v-else-if="minus" id="minus"><span id="minus">-&nbsp;</span><span id="money">{{(amount)}}</span></p>
+                <p v-if="plus" id="money"><span id="plus">+&nbsp;<span id="plus">{{formatMoney(amount)}}</span></p>
+                <p v-else-if="minus" id="minus"><span id="minus">-&nbsp;<span id="minus">{{formatMoney(amount)}}</span></p>
             </div>
         </div>
         <span>
